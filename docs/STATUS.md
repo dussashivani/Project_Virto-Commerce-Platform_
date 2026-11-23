@@ -1,4 +1,4 @@
-# Honest status and deviations
+# Status and deviations
 
 Updated after a real run on Windows 11 + Docker Desktop (engine 29.9.3, Compose v5.7.0). Evidence files are in `evidence/`.
 
@@ -6,7 +6,7 @@ Updated after a real run on Windows 11 + Docker Desktop (engine 29.9.3, Compose 
 | Area | Result | Evidence |
 |---|---|---|
 | Local stack (SQL Server 2022, Elasticsearch 8.15.3, Redis 7.4, Platform 3.1076.13, 59 modules) | all healthy, restart policy brought it back after Docker was stopped | `01-startup.txt`, `02-ps-healthy.txt` |
-| Platform admin | login works, default admin password changed, sample data loaded (9 catalogs, 1 store, 389 products) | screenshots (add) |
+| Platform admin | login works, default admin password changed, sample data loaded (9 catalogs, 1 store, 389 products) | `evidence/12-admin-login.png`, `14-admin-dashboard.png`, `15-admin-catalog.png` |
 | Frontend (vc-frontend 2.59.1 + nginx) <-> Platform | GraphQL through nginx returns store `B2B-store`; search serves 147 products | `03-validate.txt`, `08-frontend-platform-comms.txt` |
 | `scripts/validate.sh` | all checks pass | `03-validate.txt` |
 | `scripts/persistence-test.sh` | marker row, `App_Data` file and real Virto data (5 users / 9 catalogs / 1 store) identical after restart | `04-persistence.txt` |
@@ -19,7 +19,7 @@ Updated after a real run on Windows 11 + Docker Desktop (engine 29.9.3, Compose 
 | CI `floci-terraform.yml` (repo `main`, run 45148454371) | compose config, terraform fmt/init/validate, Floci start, AWS CLI check, plan, apply, resource verification: passed (1m17s); Floci logs uploaded as artifact `floci-terraform-evidence` | Actions run history |
 | CI `ci.yml` (repo `main`, run 45147406040) | `static` (shell syntax, compose, secret/placeholder check, terraform fmt+validate) and full-stack `smoke` on a clean ubuntu runner: module install, stack + vc-frontend boot, validate (no-sample-data mode), persistence, failure drill, backup/restore: all passed (3m17s). Two real CI-only problems were found and fixed on the way: a Linux file-permission bug in `restore.sh`, and `vc-build` GitHub API rate limiting (token + retry). `image-scan` job exists but was **not** run in CI (local Trivy results only) | Actions run history |
 
-## Deviations from the first draft (and why)
+## Where I changed the original plan (and why)
 | Deviation | Reason |
 |---|---|
 | Platform pinned to `ghcr.io/virtocommerce/platform:3.1076.13`, not Docker Hub `:latest` | Hub `:latest` (3.1101) is newer than the stable module bundle; versions must match. Tag exists on ghcr.io only. |
@@ -38,5 +38,5 @@ Updated after a real run on Windows 11 + Docker Desktop (engine 29.9.3, Compose 
 | Image vulnerability gating in CI / ECR scan-on-push | proposed. (Local Trivy scan **was run**; Elasticsearch 8.15.3 still has 9 fixable CRITICAL jar findings - not remediated, see SECURITY.md) |
 | `vc-frontend` store/theme customisation | stock B2B theme only |
 | frontend API user (`frontend`) | created for the legacy storefront test; **not needed by vc-frontend** (uses GraphQL) |
-| Browser screenshots | to be added to `evidence/` (admin, storefront, ES index) |
+| Screenshots | admin and storefront are in `evidence/12-16`; no Docker Desktop or Actions screenshots, and none of the Elasticsearch index |
 | Product images in the storefront | **Not shown (known sample-data limitation).** The sample data loads 1,186 image records but not the image files; the platform builds URLs on its default `https://localhost:5001/assets/...` and the files do not exist (404 on the platform too). Catalog, search, prices and variations work. See `TROUBLESHOOTING.md` |

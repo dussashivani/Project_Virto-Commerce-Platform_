@@ -1,6 +1,6 @@
 # Deployment runbook (Task 7)
 
-Sections 1–16 follow the assignment's required list. Read `docs/ARCHITECTURE.md` first for the local / Floci / real-AWS distinction.
+Sections 1–16 cover everything needed to deploy, operate and recover the stack. Read `docs/ARCHITECTURE.md` first for the local / Floci / real-AWS distinction.
 
 ## 1. Architecture diagram
 See `docs/ARCHITECTURE.md` §4 (local containers) and §7 (proposed AWS). Mermaid renders on GitHub/GitLab; to export an image: `npx -p @mermaid-js/mermaid-cli mmdc -i docs/ARCHITECTURE.md -o docs/diagram.png`.
@@ -11,7 +11,7 @@ See `docs/ARCHITECTURE.md` §4 (local containers) and §7 (proposed AWS). Mermai
 | Docker Engine + Compose v2 | Engine ≥ 24, Compose ≥ 2.20 (authoring checked config with Compose v5.7.1 only) | `docker compose version` |
 | RAM / disk | ≥ 8 GB free RAM (SQL Server ≥ 2 GB, ES 1 GB), ≥ 15 GB disk | |
 | CPU arch | **linux/amd64.** SQL Server image has no native arm64 build; on Apple Silicon enable Rosetta emulation or use a PostgreSQL variant | |
-| OpenTofu ≥ 1.6 (1.9.0 used for fmt check) or Terraform ≥ 1.6 | | `tofu version` |
+| Terraform ≥ 1.6 (1.14.7 in CI); OpenTofu ≥ 1.6 should also work but was not run | | `terraform version` |
 | AWS CLI v2 | | `aws --version` |
 | `curl`, `openssl`, `bash` | | |
 | Linux only | `sudo sysctl -w vm.max_map_count=262144` (Elasticsearch) | |

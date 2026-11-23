@@ -4,7 +4,7 @@
 provider "aws" {
   region = var.region
   default_tags {
-    tags = { Project = "virto-commerce", ManagedBy = "opentofu" }
+    tags = { Project = "virto-commerce", ManagedBy = "terraform" }
   }
 }
 
