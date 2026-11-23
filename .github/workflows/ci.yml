@@ -54,6 +54,9 @@ jobs:
         run: sudo sysctl -w vm.max_map_count=262144
       - run: ./scripts/generate-env.sh
       - name: Install module bundle (vc-build) and start platform
+        env:
+          # raises the GitHub API limit from 60/h per shared runner IP to 5000/h (vc-build otherwise fails with 'rate limit exceeded')
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./scripts/install-modules.sh
       - name: Start full stack incl. vc-frontend
         run: ./scripts/up.sh --with-storefront

@@ -118,6 +118,9 @@ services:
       HOME: /tmp/home
       DOTNET_CLI_HOME: /tmp/home
       MODULES_BUNDLE_URL: ${MODULES_BUNDLE_URL}
+      # Optional but recommended: unauthenticated GitHub API calls are limited to 60/hour per IP and vc-build
+      # fails with "API rate limit exceeded" (seen on shared CI runners). Any token works; no scopes needed.
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
     volumes:
       - platform_modules:/modules
     entrypoint: ["bash", "-c"]
@@ -127,8 +130,13 @@ services:
         mkdir -p /tmp/home
         dotnet tool install --tool-path /tmp/tools VirtoCommerce.GlobalTool
         curl -fsSL "$$MODULES_BUNDLE_URL" -o /tmp/package.json
-        /tmp/tools/vc-build install --package-manifest-path /tmp/package.json \
-          --probing-path /tmp/probing --discovery-path /modules --root /tmp/root --skip-dependency-solving
+        TOKEN_ARGS=()
+        [ -n "$${GITHUB_TOKEN:-}" ] && TOKEN_ARGS=(-GitHubToken "$$GITHUB_TOKEN")
+        for attempt in 1 2 3; do    # retry: GitHub/NuGet/Azure endpoints fail transiently
+          if /tmp/tools/vc-build install --package-manifest-path /tmp/package.json                --probing-path /tmp/probing --discovery-path /modules --root /tmp/root --skip-dependency-solving "$${TOKEN_ARGS[@]}"; then break; fi
+          [ "$$attempt" = 3 ] && { echo "vc-build failed after 3 attempts" >&2; exit 1; }
+          echo "vc-build attempt $$attempt failed; retrying in 30s" >&2; sleep 30
+        done
         ls /modules | head -100
     networks: [backend]
 
