@@ -39,3 +39,4 @@ Updated after a real run on Windows 11 + Docker Desktop (engine 29.9.3, Compose 
 | `vc-frontend` store/theme customisation | stock B2B theme only |
 | frontend API user (`frontend`) | created for the legacy storefront test; **not needed by vc-frontend** (uses GraphQL) |
 | Browser screenshots | to be added to `evidence/` (admin, storefront, ES index) |
+| Product images in the storefront | **Not shown (known sample-data limitation).** The sample data loads 1,186 image records but not the image files; the platform builds URLs on its default `https://localhost:5001/assets/...` and the files do not exist (404 on the platform too). Catalog, search, prices and variations work. See `TROUBLESHOOTING.md` |

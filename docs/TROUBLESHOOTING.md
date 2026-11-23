@@ -35,5 +35,11 @@ Issues marked **(seen)** were actually hit while building this repo (see `eviden
 4. **Resolution.** Replaced it with the current official frontend **vc-frontend 2.59.1** (Vue SPA, GraphQL) served by nginx; nginx proxies `/graphql`, `/connect/token`, `/files`, `/cms-content` to the platform (`frontend/nginx.conf`). The legacy image stays behind the compose profile `legacy` as documented evidence.
 5. **Prevention.** `scripts/validate.sh` now checks the real chain (`browser -> nginx -> platform -> search`): GraphQL returns store `B2B-store` and `products.totalCount > 0`, not just an open port. Evidence: `evidence/03-validate.txt`, `evidence/08-frontend-platform-comms.txt`.
 
+## Third example (data, not infrastructure): product images are blank
+- **Symptom.** Storefront product cards show a placeholder icon instead of a photo; everything else (categories, search, prices, variations) works.
+- **Investigation.** GraphQL `imgSrc` returns `https://localhost:5001/assets/catalog/.../x.jpg`. The same path on the platform (`:8090/assets/...`) and through nginx (`:8080/assets/...`) returns 404. The database holds 1,186 relative image paths (`CatalogImage`), but the platform container has no `wwwroot/assets` directory and no image files.
+- **Root cause.** The sample data package creates the image records but does not ship the files (upstream tracks this in VirtoCommerce/vc-sample-data PR #19). The `localhost:5001` host is only the platform's default public asset URL, a second, separate misconfiguration.
+- **Decision.** Not fixed: images are content, not part of deploying or operating the stack. Fixing the URL alone would not help because the files are absent. If needed: set `Assets__FileSystem__PublicUrl`, proxy `/assets` in nginx, and upload images through the admin or restore them from a backup.
+
 ## Second example (silent failure): search provider
 Container health was green and the site answered 200, yet products were missing. The only sign was a recurring `no registered Search Provider` error in the platform log. Root cause and fix are in the table above. Lesson: **a green healthcheck is not a working application** - validate with a data request.
