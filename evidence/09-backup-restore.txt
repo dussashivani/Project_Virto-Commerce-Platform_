@@ -1,0 +1,50 @@
+[14:12:09] 1. Write markers (dr_1795356729) and record real data counts (users/catalogs/items)
+  counts: 5/9/389
+[14:12:11] 2. Backup
+[14:12:12] DB backup
+Processed 4792 pages for database 'VirtoCommerce3', file 'VirtoCommerce3' on file 1.
+Processed 2 pages for database 'VirtoCommerce3', file 'VirtoCommerce3_log' on file 1.
+BACKUP DATABASE successfully processed 4794 pages in 0.332 seconds (112.798 MB/sec).
+ virto-sqlserver-1 Copying virto-sqlserver-1:/var/opt/mssql/backup-20261122-141212.bak to backups/20261122-141212/db.bak
+ virto-sqlserver-1 Copied virto-sqlserver-1:/var/opt/mssql/backup-20261122-141212.bak to backups/20261122-141212/db.bak
+[14:12:15] Volume backups
+Unable to find image 'alpine:3.20' locally
+3.20: Pulling from library/alpine
+25f1d6b1951a: Pulling fs layer
+d4050d56ebf2: Download complete
+25f1d6b1951a: Download complete
+3a030ca3f633: Download complete
+25f1d6b1951a: Pull complete
+Digest: sha256:d9e853e87e55526f6b2917df91a2115c36dd7c696a35be12163d44e6e2a4b6bc
+Status: Downloaded newer image for alpine:3.20
+total 6067
+drwxr-xr-x 1 adars 197609       0 Nov 22 14:12 .
+drwxr-xr-x 1 adars 197609       0 Nov 22 14:12 ..
+-rw-r--r-- 1 adars 197609     242 Nov 22 14:12 SHA256SUMS
+-rw-r--r-- 1 adars 197609      87 Nov 22 14:12 cms_content.tgz
+-rw-r--r-- 1 adars 197609 6205440 Nov 22 14:12 db.bak
+-rw-r--r-- 1 adars 197609     149 Nov 22 14:12 platform_appdata.tgz
+Backup: backups/20261122-141212
+  using backups/20261122-141212
+[14:12:25] 3. DESTROY: drop marker table, delete marker file, add a 'post-backup' table
+  PASS damage confirmed (marker table gone)
+[14:12:27] 4. Restore
+cms_content.tgz: OK
+db.bak: OK
+platform_appdata.tgz: OK
+ virto-sqlserver-1 Copying backups/20261122-141212/db.bak to virto-sqlserver-1:/var/opt/mssql/restore.bak
+ virto-sqlserver-1 Copied backups/20261122-141212/db.bak to virto-sqlserver-1:/var/opt/mssql/restore.bak
+Nonqualified transactions are being rolled back. Estimated rollback completion: 0%.
+Nonqualified transactions are being rolled back. Estimated rollback completion: 100%.
+Processed 4792 pages for database 'VirtoCommerce3', file 'VirtoCommerce3' on file 1.
+Processed 2 pages for database 'VirtoCommerce3', file 'VirtoCommerce3_log' on file 1.
+RESTORE DATABASE successfully processed 4794 pages in 0.742 seconds (50.470 MB/sec).
+[14:13:29] Restore complete - run scripts/validate.sh
+[14:13:29] 5. Verify recovery
+  PASS DB marker row recovered
+  PASS post-backup change rolled back (point-in-time)
+  PASS App_Data marker file recovered
+  PASS real Virto data identical (5/9/389)
+  PASS platform serving after restore (200)
+[14:13:33] 6. Cleanup markers
+BACKUP/RESTORE VERIFIED

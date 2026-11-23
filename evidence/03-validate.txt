@@ -1,0 +1,24 @@
+[15:50:49] 1. Container health
+  PASS sqlserver healthy
+  PASS elasticsearch healthy
+  PASS redis healthy
+  PASS platform healthy
+[15:50:51] 2. Platform HTTP
+  PASS platform / -> 200
+  info: platform /health -> 200 (endpoint availability depends on platform version)
+[15:50:51] 3. Dependencies reachable from platform container (network-level)
+  PASS platform -> sqlserver:1433
+  PASS platform -> elasticsearch:9200
+  PASS platform -> redis:6379
+[15:50:53] 4. DB / search / cache not exposed on the host
+  PASS host port 1433 closed
+  PASS host port 9200 closed
+  PASS host port 6379 closed
+[15:50:59] 5. Frontend (vc-frontend + nginx) and frontend<->platform communication
+  PASS frontend healthy
+  PASS frontend / -> 200
+  PASS frontend -> platform GraphQL returned store B2B-store (needs sample data)
+  PASS search index serves products (totalCount=147)
+  PASS no upstream errors in frontend logs
+
+ALL CHECKS PASSED

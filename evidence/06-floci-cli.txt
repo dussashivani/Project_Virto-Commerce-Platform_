@@ -1,0 +1,22 @@
+ Image floci/floci:latest Pulling 
+ Image floci/floci:latest Pulled 
+ Network floci_default Creating 
+ Volume floci_floci_data Creating 
+ Volume floci_floci_data Creating 
+ Network floci_default Creating 
+ Volume floci_floci_data Created 
+ Volume floci_floci_data Created 
+ Network floci_default Created 
+ Network floci_default Created 
+ Container floci-floci-1 Creating 
+ Container floci-floci-1 Created 
+ Container floci-floci-1 Starting 
+ Container floci-floci-1 Started 
+[19:32:08] aws sts get-caller-identity (emulator)
+{
+    "UserId": "000000000000",
+    "Account": "000000000000",
+    "Arn": "arn:aws:iam::000000000000:root"
+}
+[19:32:18] aws s3 ls
+Emulator ready at http://localhost:4566

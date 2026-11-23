@@ -1,0 +1,16 @@
+# Floci - local AWS EMULATOR (port 4566). Separate from the application stack on purpose:
+# resources created here are emulated, NOT real AWS.
+name: floci
+services:
+  floci:
+    image: ${FLOCI_IMAGE:-floci/floci:latest}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:4566:4566"
+    environment:
+      FLOCI_STORAGE_MODE: hybrid
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock   # needed for container-backed services (ECS/RDS/EC2)
+      - floci_data:/app/data
+volumes:
+  floci_data:

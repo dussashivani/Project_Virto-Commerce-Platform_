@@ -1,0 +1,11 @@
+# Force LF: CRLF in shell scripts breaks them on Linux (CI runners, containers).
+* text=auto
+*.sh   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.tf   text eol=lf
+*.conf text eol=lf
+*.md   text eol=lf
+*.pptx binary
+*.png  binary
+*.zip  binary

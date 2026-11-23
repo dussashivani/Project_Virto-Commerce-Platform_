@@ -1,0 +1,4 @@
+acm_certificate_arn = "arn:aws:acm:eu-central-1:<ACCOUNT_ID>:certificate/<ID>"
+platform_image      = "<ACCOUNT_ID>.dkr.ecr.eu-central-1.amazonaws.com/virto-platform@sha256:<DIGEST>"
+storefront_image    = "<ACCOUNT_ID>.dkr.ecr.eu-central-1.amazonaws.com/virto-storefront@sha256:<DIGEST>"
+alarm_email         = "ops@example.com"

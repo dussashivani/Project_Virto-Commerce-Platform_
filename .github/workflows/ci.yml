@@ -1,0 +1,96 @@
+# CI for the Virto Commerce DevOps assignment.
+# Project files live at the repository root.
+# - static   : every push/PR - shell syntax, compose config, secret/placeholder checks, terraform fmt + validate
+# - smoke    : every push to main, or manually (run_smoke=true) - boots the REAL stack on the runner, installs the module
+#              bundle, starts vc-frontend, runs validate / persistence / failure-drill / backup-restore tests
+# - image-scan: MANUAL (run_scan=true) - Trivy over every image; report only (third-party images), see docs/SECURITY.md
+# Emulated-AWS provisioning is in floci-terraform.yml (unchanged).
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      run_smoke:
+        description: "Run the full Docker smoke test (SQL Server + Elasticsearch + Platform + modules; ~15 min)"
+        type: boolean
+        default: false
+      run_scan:
+        description: "Run the Trivy image scan (pulls all images; ~10 min)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  static:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.14.7
+      - name: Static checks (shell syntax, compose, secrets, fmt)
+        run: bash scripts/test-all.sh
+      - name: Validate IaC (no cloud credentials needed)
+        run: |
+          for d in terraform/envs/floci terraform/envs/aws; do
+            (cd "$d" && terraform init -backend=false -input=false && terraform validate)
+          done
+
+  smoke:
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.run_smoke)
+    runs-on: ubuntu-24.04
+    needs: static
+    timeout-minutes: 45
+    env:
+      VALIDATE_REQUIRE_DATA: "0"   # fresh install: no sample data, so check the proxy chain, not catalog content
+    steps:
+      - uses: actions/checkout@v4
+      - name: Elasticsearch kernel setting
+        run: sudo sysctl -w vm.max_map_count=262144
+      - run: ./scripts/generate-env.sh
+      - name: Install module bundle (vc-build) and start platform
+        run: ./scripts/install-modules.sh
+      - name: Start full stack incl. vc-frontend
+        run: ./scripts/up.sh --with-storefront
+      - run: ./scripts/validate.sh
+      - run: ./scripts/persistence-test.sh
+      - run: ./scripts/failure-drill.sh
+      - run: ./scripts/backup-restore-test.sh
+      - name: Collect logs
+        if: always()
+        run: |
+          mkdir -p ci-logs
+          docker compose --profile storefront ps -a > ci-logs/ps.txt || true
+          docker compose --profile storefront logs --no-color --tail 400 > ci-logs/compose.log || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: smoke-logs
+          path: ci-logs
+          if-no-files-found: warn
+      - name: Cleanup
+        if: always()
+        run: |
+          docker compose --profile storefront down -v --remove-orphans || true
+
+  image-scan:
+    if: github.event_name == 'workflow_dispatch' && inputs.run_scan
+    runs-on: ubuntu-24.04
+    needs: static
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/generate-env.sh
+      - name: Trivy scan of all compose images (report only)
+        run: ./scripts/scan-images.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: trivy-reports
+          path: evidence/trivy
+          if-no-files-found: warn

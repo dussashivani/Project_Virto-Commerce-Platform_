@@ -1,0 +1,8 @@
+[13:50:00] Writing markers (persist_1795355400)
+[13:50:04] App data before restart (users/catalogs/stores): 5/9/1
+[13:50:04] Restarting sqlserver + platform
+[13:51:36] Reading markers back
+  PASS DB row survived restart
+  PASS App_Data file survived restart
+[13:51:39] App data after restart (users/catalogs/stores): 5/9/1
+  PASS Virto application data identical after restart (5/9/1)

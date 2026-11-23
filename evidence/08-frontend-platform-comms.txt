@@ -1,0 +1,22 @@
+# Frontend <-> Platform communication, 2026-11-22T13:39:53Z
+## containers
+SERVICE         STATUS
+elasticsearch   Up 31 minutes (healthy)
+frontend        Up 8 minutes (healthy)
+platform        Up 31 minutes (healthy)
+redis           Up 31 minutes (healthy)
+sqlserver       Up 31 minutes (healthy)
+
+## vc-frontend artifact
+https://github.com/VirtoCommerce/vc-frontend/releases/download/2.59.1/vc-frontend-2.59.1.zip
+
+## GET http://localhost:8080/ (nginx -> static vc-frontend)
+http=200
+
+## POST http://localhost:8080/graphql (nginx -> platform:80)
+{"data":{"store":{"storeId":"B2B-store","storeName":"B2B-store","defaultLanguage":{"cultureName":"en-US"}}}}
+
+## LEGACY storefront (virtocommerce/storefront:latest, built 2024-04-18) against platform 3.1076.13
+storefront: POST http://platform/connect/token -> 200 (login OK)
+storefront: GET  http://platform/api/stores   -> 405 MethodNotAllowed -> every page HTTP 500
+platform direct: GET /api/stores -> 405 (endpoint removed); GraphQL /graphql -> 200

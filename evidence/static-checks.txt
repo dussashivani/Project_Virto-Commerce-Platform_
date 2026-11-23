@@ -1,0 +1,22 @@
+[13:27:40] Shell syntax
+  PASS scripts/_lib.sh
+  PASS scripts/backup.sh
+  PASS scripts/cleanup.sh
+  PASS scripts/failure-drill.sh
+  PASS scripts/floci-apply.sh
+  PASS scripts/floci-up.sh
+  PASS scripts/generate-env.sh
+  PASS scripts/persistence-test.sh
+  PASS scripts/pin-images.sh
+  PASS scripts/restore.sh
+  PASS scripts/rollback.sh
+  PASS scripts/test-all.sh
+  PASS scripts/up.sh
+  PASS scripts/validate.sh
+[13:27:40] Compose config
+  PASS docker-compose.yml
+  PASS docker-compose.floci.yml
+[13:27:41] Secret scan (no real-looking secrets committed)
+  PASS .env not tracked
+  PASS no AWS keys/private keys
+STATIC CHECKS PASSED

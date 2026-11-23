@@ -1,0 +1,2 @@
+Docker Compose version v5.7.0
+Docker engine 29.9.3

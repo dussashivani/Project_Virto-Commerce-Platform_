@@ -1,0 +1,15 @@
+# Resolved 2026-11-21. Platform 3.1076.13 matches module bundle 'latest' (BundleVersion 16.0.13).
+mcr.microsoft.com/mssql/server:2022-latest@sha256:4525e3efac9f3e241cb003bb2ff2a82818b502f37e12049d788b1a9fa7e13b7f
+docker.elastic.co/elasticsearch/elasticsearch:8.15.3@sha256:01c1732062b4a846c5ca687b0094b89bad0bfed00c6d71626db32fb8f3131a78
+redis:7.4-alpine@sha256:7f7d30b7fdd09467bac58198a1f166dd69789d348d4fe859cccb20e0cf287fbe
+ghcr.io/virtocommerce/platform:3.1076.13
+
+PLATFORM_IMAGE=ghcr.io/virtocommerce/platform@sha256:cf198c3edaf56de7bec725431d680407bc487f3a0558f7b493de6e46d4ca6eb7
+MODULES_BUNDLE_URL=https://raw.githubusercontent.com/VirtoCommerce/vc-modules/refs/heads/master/bundles/latest/package.json
+DOTNET_SDK_IMAGE=mcr.microsoft.com/dotnet/sdk:10.0
+
+PLATFORM_IMAGE=ghcr.io/virtocommerce/platform@sha256:cf198c3edaf56de7bec725431d680407bc487f3a0558f7b493de6e46d4ca6eb7
+STOREFRONT_IMAGE=virtocommerce/storefront@sha256:7484bc25e2a516193b361a16127e65f2cd3c3404cd8ed525b84a375acb0c95d1
+SQLSERVER_IMAGE=mcr.microsoft.com/mssql/server@sha256:4525e3efac9f3e241cb003bb2ff2a82818b502f37e12049d788b1a9fa7e13b7f
+ELASTICSEARCH_IMAGE=docker.elastic.co/elasticsearch/elasticsearch@sha256:01c1732062b4a846c5ca687b0094b89bad0bfed00c6d71626db32fb8f3131a78
+REDIS_IMAGE=redis@sha256:7f7d30b7fdd09467bac58198a1f166dd69789d348d4fe859cccb20e0cf287fbe

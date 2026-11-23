@@ -1,0 +1,132 @@
+name: Floci Terraform Infrastructure
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'terraform/**'
+      - 'docker-compose.floci.yml'
+      - '.github/workflows/floci-terraform.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'terraform/**'
+      - 'docker-compose.floci.yml'
+      - '.github/workflows/floci-terraform.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  terraform-floci:
+    name: Terraform on Floci
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
+      AWS_DEFAULT_REGION: us-east-1
+      AWS_EC2_METADATA_DISABLED: "true"
+      AWS_ENDPOINT_URL: http://localhost:4566
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.14.7
+
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y awscli
+
+      - name: Validate Docker Compose files
+        run: |
+
+          cat > .env <<'ENV'
+          MSSQL_SA_PASSWORD=CI_Test_Password_123!
+          REDIS_PASSWORD=CI_Redis_Test_Password_123!
+          SQLSERVER_IMAGE=mcr.microsoft.com/mssql/server:2022-latest
+          PLATFORM_IMAGE=virtocommerce/platform:latest
+          STOREFRONT_IMAGE=virtocommerce/storefront:latest
+          ELASTICSEARCH_IMAGE=docker.elastic.co/elasticsearch/elasticsearch:8.17.0
+          REDIS_IMAGE=redis:7-alpine
+          ENV
+
+          docker compose config -q
+          docker compose -f docker-compose.floci.yml config -q
+
+          rm -f .env
+
+      - name: Terraform formatting check
+        run: terraform fmt -check -recursive terraform
+
+      - name: Terraform initialization
+        working-directory: terraform/envs/floci
+        run: terraform init -input=false
+
+      - name: Terraform validation
+        working-directory: terraform/envs/floci
+        run: terraform validate
+
+      - name: Start Floci emulator
+        run: |
+          docker compose -f docker-compose.floci.yml up -d
+          for i in $(seq 1 60); do
+            if curl -fsS http://localhost:4566/ >/dev/null 2>&1; then
+              echo "Floci is ready"
+              break
+            fi
+            if [ "$i" -eq 60 ]; then
+              docker compose -f docker-compose.floci.yml logs
+              exit 1
+            fi
+            sleep 2
+          done
+
+      - name: Verify Floci AWS connectivity
+        run: |
+          aws --endpoint-url="$AWS_ENDPOINT_URL" sts get-caller-identity
+          aws --endpoint-url="$AWS_ENDPOINT_URL" s3 ls
+
+      - name: Terraform plan
+        working-directory: terraform/envs/floci
+        run: terraform plan -input=false -out=tfplan
+
+      - name: Terraform apply (main branch only)
+        if: github.event_name != 'pull_request'
+        working-directory: terraform/envs/floci
+        run: terraform apply -input=false -auto-approve tfplan
+
+      - name: Verify deployed resources
+        if: github.event_name != 'pull_request'
+        run: |
+          aws --endpoint-url="$AWS_ENDPOINT_URL" s3 ls
+          aws --endpoint-url="$AWS_ENDPOINT_URL" ecs list-clusters
+          aws --endpoint-url="$AWS_ENDPOINT_URL" ec2 describe-vpcs
+          aws --endpoint-url="$AWS_ENDPOINT_URL" iam list-roles
+          aws --endpoint-url="$AWS_ENDPOINT_URL" secretsmanager list-secrets
+          aws --endpoint-url="$AWS_ENDPOINT_URL" logs describe-log-groups
+
+      - name: Capture Floci logs
+        if: always()
+        run: |
+          docker compose -f docker-compose.floci.yml logs > floci-logs.txt || true
+
+      - name: Upload execution evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: floci-terraform-evidence
+          path: floci-logs.txt
+          if-no-files-found: warn
+
+      - name: Stop Floci emulator
+        if: always()
+        run: docker compose -f docker-compose.floci.yml down

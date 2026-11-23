@@ -1,0 +1,5 @@
+
+mcr.microsoft.com/dotnet/sdk:10.0 (ubuntu 24.04)
+================================================
+Total: 0 (HIGH: 0, CRITICAL: 0)
+

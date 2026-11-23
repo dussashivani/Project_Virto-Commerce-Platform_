@@ -1,0 +1,820 @@
+[1;34m[12:39:49][0m Installing modules from https://raw.githubusercontent.com/VirtoCommerce/vc-modules/refs/heads/master/bundles/latest/package.json (downloads ~60 modules; several minutes)
+ Container virto-modules-init-run-34baf1e0dcf0 Creating 
+ Container virto-modules-init-run-34baf1e0dcf0 Created 
+You can invoke the tool using the following command: vc-build
+Tool 'virtocommerce.globaltool' (version '3.1002.1') was successfully installed.
+No .nuke file found!
+​
+███╗   ██╗██╗   ██╗██╗  ██╗███████╗
+████╗  ██║██║   ██║██║ ██╔╝██╔════╝
+██╔██╗ ██║██║   ██║█████╔╝ █████╗  
+██║╚██╗██║██║   ██║██╔═██╗ ██╔══╝  
+██║ ╚████║╚██████╔╝██║  ██╗███████╗
+╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+​
+NUKE Execution Engine version 1.0.0 (Linux,.NETCoreApp,Version=v10.0)
+​
+​
+╬════════════
+║ Install
+╬═══
+​
+12:40:03 [INF] Loading modules
+12:40:03 [INF] Discovered modules: 0, with errors: 0
+​
+╬════════════════════
+║ InstallPlatform
+╬═══════════
+​
+12:40:04 [INF] Installing platform 3.1076.13
+​
+╬═══════════════════
+║ InstallModules
+╬══════════
+​
+12:40:17 [INF] Loading modules
+12:40:17 [INF] Discovered modules: 0, with errors: 0
+12:40:17 [INF] Installing 'VirtoCommerce.ApplicationInsights:3.1005.0'
+12:40:17 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-app-insights/releases/download/3.1005.0/VirtoCommerce.ApplicationInsights_3.1005.0.zip'
+12:40:19 [INF] Successfully installed 'VirtoCommerce.ApplicationInsights:3.1005.0'.
+12:40:19 [INF] Installing 'VirtoCommerce.Assets:3.1010.1'
+12:40:19 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-assets/releases/download/3.1010.1/VirtoCommerce.Assets_3.1010.1.zip'
+12:40:21 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-authorize-net/releases/download/3.1005.0/VirtoCommerce.AuthorizeNetPayment_3.1005.0.zip'
+12:40:21 [INF] Installing 'VirtoCommerce.AuthorizeNetPayment:3.1005.0'
+12:40:21 [INF] Successfully installed 'VirtoCommerce.Assets:3.1010.1'.
+12:40:21 [INF] Successfully installed 'VirtoCommerce.AuthorizeNetPayment:3.1005.0'.
+12:40:21 [INF] Installing 'VirtoCommerce.AvalaraTax:3.1005.1'
+12:40:21 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-avatax/releases/download/3.1005.1/VirtoCommerce.AvalaraTax_3.1005.1.zip'
+12:40:22 [INF] Successfully installed 'VirtoCommerce.AvalaraTax:3.1005.1'.
+12:40:22 [INF] Installing 'VirtoCommerce.AzureAD:3.1003.0'
+12:40:22 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-azure-ad/releases/download/3.1003.0/VirtoCommerce.AzureAD_3.1003.0.zip'
+12:40:23 [INF] Installing 'VirtoCommerce.AzureBlobAssets:3.1009.0'
+12:40:23 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-azureblob-assets/releases/download/3.1009.0/VirtoCommerce.AzureBlobAssets_3.1009.0.zip'
+12:40:23 [INF] Successfully installed 'VirtoCommerce.AzureAD:3.1003.0'.
+12:40:23 [INF] Successfully installed 'VirtoCommerce.AzureBlobAssets:3.1009.0'.
+12:40:23 [INF] Installing 'VirtoCommerce.AzureSearch:3.1007.2'
+12:40:23 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-azure-search/releases/download/3.1007.2/VirtoCommerce.AzureSearch_3.1007.2.zip'
+12:40:24 [INF] Successfully installed 'VirtoCommerce.AzureSearch:3.1007.2'.
+12:40:24 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-background-jobs/releases/download/3.1052.3/VirtoCommerce.BackgroundJobs_3.1052.3.zip'
+12:40:24 [INF] Installing 'VirtoCommerce.BackgroundJobs:3.1052.3'
+12:40:25 [INF] Successfully installed 'VirtoCommerce.BackgroundJobs:3.1052.3'.
+12:40:25 [INF] Installing 'VirtoCommerce.BackupRestore:3.1007.1'
+12:40:25 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-backup-restore/releases/download/3.1007.1/VirtoCommerce.BackupRestore_3.1007.1.zip'
+12:40:26 [INF] Successfully installed 'VirtoCommerce.BackupRestore:3.1007.1'.
+12:40:26 [INF] Installing 'VirtoCommerce.BulkActionsModule:3.1004.1'
+12:40:26 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-bulk-actions/releases/download/3.1004.1/VirtoCommerce.BulkActionsModule_3.1004.1.zip'
+12:40:26 [INF] Successfully installed 'VirtoCommerce.BulkActionsModule:3.1004.1'.
+12:40:26 [INF] Installing 'VirtoCommerce.Cart:3.1012.1'
+12:40:26 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-cart/releases/download/3.1012.1/VirtoCommerce.Cart_3.1012.1.zip'
+12:40:27 [INF] Successfully installed 'VirtoCommerce.Cart:3.1012.1'.
+12:40:27 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-catalog/releases/download/3.1048.4/VirtoCommerce.Catalog_3.1048.4.zip'
+12:40:27 [INF] Installing 'VirtoCommerce.Catalog:3.1048.4'
+12:40:28 [INF] Successfully installed 'VirtoCommerce.Catalog:3.1048.4'.
+12:40:28 [INF] Installing 'VirtoCommerce.CatalogCsvImportModule:3.1007.2'
+12:40:28 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-catalog-csv-export-import/releases/download/3.1007.2/VirtoCommerce.CatalogCsvImportModule_3.1007.2.zip'
+12:40:29 [INF] Successfully installed 'VirtoCommerce.CatalogCsvImportModule:3.1007.2'.
+12:40:29 [INF] Installing 'VirtoCommerce.CatalogPersonalization:3.1006.2'
+12:40:29 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-catalog-personalization/releases/download/3.1006.2/VirtoCommerce.CatalogPersonalization_3.1006.2.zip'
+12:40:29 [INF] Successfully installed 'VirtoCommerce.CatalogPersonalization:3.1006.2'.
+12:40:29 [INF] Installing 'VirtoCommerce.CatalogPublishing:3.1007.2'
+12:40:29 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-catalog-publishing/releases/download/3.1007.2/VirtoCommerce.CatalogPublishing_3.1007.2.zip'
+12:40:30 [INF] Successfully installed 'VirtoCommerce.CatalogPublishing:3.1007.2'.
+12:40:30 [INF] Installing 'VirtoCommerce.Content:3.1006.2'
+12:40:30 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-content/releases/download/3.1006.2/VirtoCommerce.Content_3.1006.2.zip'
+12:40:31 [INF] Installing 'VirtoCommerce.Contracts:3.1006.1'
+12:40:31 [INF] Successfully installed 'VirtoCommerce.Content:3.1006.2'.
+12:40:31 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-contract/releases/download/3.1006.1/VirtoCommerce.Contracts_3.1006.1.zip'
+12:40:32 [INF] Successfully installed 'VirtoCommerce.Contracts:3.1006.1'.
+12:40:32 [INF] Installing 'VirtoCommerce.Core:3.1012.1'
+12:40:32 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-core/releases/download/3.1012.1/VirtoCommerce.Core_3.1012.1.zip'
+12:40:32 [INF] Successfully installed 'VirtoCommerce.Core:3.1012.1'.
+12:40:32 [INF] Installing 'VirtoCommerce.Customer:3.1029.2'
+12:40:32 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-customer/releases/download/3.1029.2/VirtoCommerce.Customer_3.1029.2.zip'
+12:40:33 [INF] Successfully installed 'VirtoCommerce.Customer:3.1029.2'.
+12:40:33 [INF] Installing 'VirtoCommerce.CustomerReviews:3.1007.2'
+12:40:33 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-customer-review/releases/download/3.1007.2/VirtoCommerce.CustomerReviews_3.1007.2.zip'
+12:40:34 [INF] Installing 'VirtoCommerce.DynamicAssociationsModule:3.1003.1'
+12:40:34 [INF] Successfully installed 'VirtoCommerce.CustomerReviews:3.1007.2'.
+12:40:34 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-dynamic-associations/releases/download/3.1003.1/VirtoCommerce.DynamicAssociationsModule_3.1003.1.zip'
+12:40:35 [INF] Installing 'VirtoCommerce.ElasticSearch8:3.1011.0'
+12:40:35 [INF] Successfully installed 'VirtoCommerce.DynamicAssociationsModule:3.1003.1'.
+12:40:35 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-elastic-search-8/releases/download/3.1011.0/VirtoCommerce.ElasticSearch8_3.1011.0.zip'
+12:40:37 [INF] Successfully installed 'VirtoCommerce.ElasticSearch8:3.1011.0'.
+12:40:37 [INF] Installing 'VirtoCommerce.Export:3.1005.1'
+12:40:37 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-export/releases/download/3.1005.1/VirtoCommerce.Export_3.1005.1.zip'
+12:40:38 [INF] Successfully installed 'VirtoCommerce.Export:3.1005.1'.
+12:40:38 [INF] Installing 'VirtoCommerce.FileExperienceApi:3.1006.0'
+12:40:38 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-file-experience-api/releases/download/3.1006.0/VirtoCommerce.FileExperienceApi_3.1006.0.zip'
+12:40:38 [INF] Successfully installed 'VirtoCommerce.FileExperienceApi:3.1006.0'.
+12:40:38 [INF] Installing 'VirtoCommerce.FileSystemAssets:3.1006.0'
+12:40:38 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-filesystem-assets/releases/download/3.1006.0/VirtoCommerce.FileSystemAssets_3.1006.0.zip'
+12:40:39 [INF] Successfully installed 'VirtoCommerce.FileSystemAssets:3.1006.0'.
+12:40:39 [INF] Installing 'VirtoCommerce.GDPR:3.1003.1'
+12:40:39 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-gdpr/releases/download/3.1003.1/VirtoCommerce.GDPR_3.1003.1.zip'
+12:40:39 [INF] Successfully installed 'VirtoCommerce.GDPR:3.1003.1'.
+12:40:39 [INF] Installing 'VirtoCommerce.GoogleEcommerceAnalytics:4.1004.1'
+12:40:39 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-google-ecommerce-analytics/releases/download/4.1004.1/VirtoCommerce.GoogleEcommerceAnalytics_4.1004.1.zip'
+12:40:40 [INF] Successfully installed 'VirtoCommerce.GoogleEcommerceAnalytics:4.1004.1'.
+12:40:40 [INF] Installing 'VirtoCommerce.GoogleSSO:3.1003.0'
+12:40:40 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-google-sso/releases/download/3.1003.0/VirtoCommerce.GoogleSSO_3.1003.0.zip'
+12:40:41 [INF] Successfully installed 'VirtoCommerce.GoogleSSO:3.1003.0'.
+12:40:41 [INF] Installing 'VirtoCommerce.ImageTools:3.1006.3'
+12:40:41 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-image-tools/releases/download/3.1006.3/VirtoCommerce.ImageTools_3.1006.3.zip'
+12:40:46 [INF] Successfully installed 'VirtoCommerce.ImageTools:3.1006.3'.
+12:40:46 [INF] Installing 'VirtoCommerce.Inventory:3.1010.1'
+12:40:46 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-inventory/releases/download/3.1010.1/VirtoCommerce.Inventory_3.1010.1.zip'
+12:40:47 [INF] Successfully installed 'VirtoCommerce.Inventory:3.1010.1'.
+12:40:47 [INF] Installing 'VirtoCommerce.LuceneSearch:3.1006.0'
+12:40:47 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-lucene-search/releases/download/3.1006.0/VirtoCommerce.LuceneSearch_3.1006.0.zip'
+12:40:48 [INF] Successfully installed 'VirtoCommerce.LuceneSearch:3.1006.0'.
+12:40:48 [INF] Installing 'VirtoCommerce.Marketing:3.1009.1'
+12:40:48 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-marketing/releases/download/3.1009.1/VirtoCommerce.Marketing_3.1009.1.zip'
+12:40:49 [INF] Successfully installed 'VirtoCommerce.Marketing:3.1009.1'.
+12:40:49 [INF] Installing 'VirtoCommerce.Notifications:3.1018.2'
+12:40:49 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-notification/releases/download/3.1018.2/VirtoCommerce.Notifications_3.1018.2.zip'
+12:40:55 [INF] Successfully installed 'VirtoCommerce.Notifications:3.1018.2'.
+12:40:55 [INF] Installing 'VirtoCommerce.OpenTelemetry:3.1002.0'
+12:40:55 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-opentelemetry/releases/download/3.1002.0/VirtoCommerce.OpenTelemetry_3.1002.0.zip'
+12:40:56 [INF] Successfully installed 'VirtoCommerce.OpenTelemetry:3.1002.0'.
+12:40:56 [INF] Installing 'VirtoCommerce.Orders:3.1018.1'
+12:40:56 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-order/releases/download/3.1018.1/VirtoCommerce.Orders_3.1018.1.zip'
+12:41:10 [INF] Successfully installed 'VirtoCommerce.Orders:3.1018.1'.
+12:41:10 [INF] Installing 'VirtoCommerce.Pages:3.1010.1'
+12:41:10 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-pages/releases/download/3.1010.1/VirtoCommerce.Pages_3.1010.1.zip'
+12:41:12 [INF] Successfully installed 'VirtoCommerce.Pages:3.1010.1'.
+12:41:12 [INF] Installing 'VirtoCommerce.PageBuilderModule:3.1032.5'
+12:41:12 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-pagebuilder/releases/download/3.1032.5/VirtoCommerce.PageBuilderModule_3.1032.5.zip'
+12:41:14 [INF] Successfully installed 'VirtoCommerce.PageBuilderModule:3.1032.5'.
+12:41:14 [INF] Installing 'VirtoCommerce.Payment:3.1010.1'
+12:41:14 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-payment/releases/download/3.1010.1/VirtoCommerce.Payment_3.1010.1.zip'
+12:41:14 [INF] Successfully installed 'VirtoCommerce.Payment:3.1010.1'.
+12:41:14 [INF] Installing 'VirtoCommerce.Pricing:3.1008.2'
+12:41:14 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-pricing/releases/download/3.1008.2/VirtoCommerce.Pricing_3.1008.2.zip'
+12:41:16 [INF] Successfully installed 'VirtoCommerce.Pricing:3.1008.2'.
+12:41:16 [INF] Installing 'VirtoCommerce.ProfileExperienceApiModule:3.1020.1'
+12:41:16 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-profile-experience-api/releases/download/3.1020.1/VirtoCommerce.ProfileExperienceApiModule_3.1020.1.zip'
+12:41:17 [INF] Successfully installed 'VirtoCommerce.ProfileExperienceApiModule:3.1020.1'.
+12:41:17 [INF] Installing 'VirtoCommerce.PushMessages:3.1008.2'
+12:41:17 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-push-messages/releases/download/3.1008.2/VirtoCommerce.PushMessages_3.1008.2.zip'
+12:41:19 [INF] Successfully installed 'VirtoCommerce.PushMessages:3.1008.2'.
+12:41:19 [INF] Installing 'VirtoCommerce.Return:3.1004.1'
+12:41:19 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-return/releases/download/3.1004.1/VirtoCommerce.Return_3.1004.1.zip'
+12:41:21 [INF] Successfully installed 'VirtoCommerce.Return:3.1004.1'.
+12:41:21 [INF] Installing 'VirtoCommerce.Search:3.1010.3'
+12:41:21 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-search/releases/download/3.1010.3/VirtoCommerce.Search_3.1010.3.zip'
+12:41:22 [INF] Successfully installed 'VirtoCommerce.Search:3.1010.3'.
+12:41:22 [INF] Installing 'VirtoCommerce.Seo:3.1005.3'
+12:41:22 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-seo/releases/download/3.1005.3/VirtoCommerce.Seo_3.1005.3.zip'
+12:41:24 [INF] Successfully installed 'VirtoCommerce.Seo:3.1005.3'.
+12:41:24 [INF] Installing 'VirtoCommerce.Shipping:3.1009.1'
+12:41:24 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-shipping/releases/download/3.1009.1/VirtoCommerce.Shipping_3.1009.1.zip'
+12:41:24 [INF] Successfully installed 'VirtoCommerce.Shipping:3.1009.1'.
+12:41:24 [INF] Installing 'VirtoCommerce.Sitemaps:3.1006.1'
+12:41:24 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-sitemaps/releases/download/3.1006.1/VirtoCommerce.Sitemaps_3.1006.1.zip'
+12:41:25 [INF] Successfully installed 'VirtoCommerce.Sitemaps:3.1006.1'.
+12:41:25 [INF] Installing 'VirtoCommerce.Store:3.1009.2'
+12:41:25 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-store/releases/download/3.1009.2/VirtoCommerce.Store_3.1009.2.zip'
+12:41:26 [INF] Successfully installed 'VirtoCommerce.Store:3.1009.2'.
+12:41:26 [INF] Installing 'VirtoCommerce.Subscription:3.1005.2'
+12:41:26 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-subscription/releases/download/3.1005.2/VirtoCommerce.Subscription_3.1005.2.zip'
+12:41:27 [INF] Successfully installed 'VirtoCommerce.Subscription:3.1005.2'.
+12:41:27 [INF] Installing 'VirtoCommerce.Tax:3.1007.2'
+12:41:27 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-tax/releases/download/3.1007.2/VirtoCommerce.Tax_3.1007.2.zip'
+12:41:27 [INF] Successfully installed 'VirtoCommerce.Tax:3.1007.2'.
+12:41:27 [INF] Installing 'VirtoCommerce.UCP:3.1010.0'
+12:41:27 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-ucp/releases/download/3.1010.0/VirtoCommerce.UCP_3.1010.0.zip'
+12:41:28 [INF] Successfully installed 'VirtoCommerce.UCP:3.1010.0'.
+12:41:28 [INF] Installing 'VirtoCommerce.WebHooks:3.1005.1'
+12:41:28 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-webhooks/releases/download/3.1005.1/VirtoCommerce.WebHooks_3.1005.1.zip'
+12:41:29 [INF] Successfully installed 'VirtoCommerce.WebHooks:3.1005.1'.
+12:41:29 [INF] Installing 'VirtoCommerce.WhiteLabeling:3.1005.1'
+12:41:29 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-white-labeling/releases/download/3.1005.1/VirtoCommerce.WhiteLabeling_3.1005.1.zip'
+12:41:30 [INF] Successfully installed 'VirtoCommerce.WhiteLabeling:3.1005.1'.
+12:41:30 [INF] Installing 'VirtoCommerce.Xapi:3.1026.0'
+12:41:30 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-x-api/releases/download/3.1026.0/VirtoCommerce.Xapi_3.1026.0.zip'
+12:41:32 [INF] Successfully installed 'VirtoCommerce.Xapi:3.1026.0'.
+12:41:32 [INF] Installing 'VirtoCommerce.XCart:3.1039.0'
+12:41:32 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-x-cart/releases/download/3.1039.0/VirtoCommerce.XCart_3.1039.0.zip'
+12:41:33 [INF] Successfully installed 'VirtoCommerce.XCart:3.1039.0'.
+12:41:33 [INF] Installing 'VirtoCommerce.XCatalog:3.1023.0'
+12:41:33 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-x-catalog/releases/download/3.1023.0/VirtoCommerce.XCatalog_3.1023.0.zip'
+12:41:34 [INF] Successfully installed 'VirtoCommerce.XCatalog:3.1023.0'.
+12:41:34 [INF] Installing 'VirtoCommerce.XCMS:3.1008.0'
+12:41:34 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-x-cms/releases/download/3.1008.0/VirtoCommerce.XCMS_3.1008.0.zip'
+12:41:35 [INF] Successfully installed 'VirtoCommerce.XCMS:3.1008.0'.
+12:41:35 [INF] Installing 'VirtoCommerce.XFrontend:3.1007.0'
+12:41:35 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-x-frontend/releases/download/3.1007.0/VirtoCommerce.XFrontend_3.1007.0.zip'
+12:41:37 [INF] Successfully installed 'VirtoCommerce.XFrontend:3.1007.0'.
+12:41:37 [INF] Installing 'VirtoCommerce.XOrder:3.1014.2'
+12:41:37 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-x-order/releases/download/3.1014.2/VirtoCommerce.XOrder_3.1014.2.zip'
+12:41:38 [INF] Successfully installed 'VirtoCommerce.XOrder:3.1014.2'.
+12:41:38 [INF] Installing 'VirtoCommerce.XPickup:3.1008.0'
+12:41:38 [INF] Downloading 'https://github.com/VirtoCommerce/vc-module-x-pickup/releases/download/3.1008.0/VirtoCommerce.XPickup_3.1008.0.zip'
+12:41:38 [INF] Successfully installed 'VirtoCommerce.XPickup:3.1008.0'.
+12:41:39 [INF] Loading modules
+12:41:39 [INF] Discovered modules: 59, with errors: 0
+​
+╬═════════════════════════
+║ ValidateDependencies
+╬════════════════
+​
+12:41:53 [INF] Loading modules
+12:41:53 [INF] Discovered modules: 59, with errors: 0
+12:41:53 [INF] Validated modules: 59, with errors: 0
+​
+════════════════════════════════════════════
+Target                  Status      Duration
+────────────────────────────────────────────
+Backup                  Skipped                // OnlyWhen: IsLocalBuild && ThereAreFilesToBackup
+Install                 Succeeded       0:01
+InstallPlatform         Succeeded       0:13
+InstallModules          Succeeded       1:35
+ValidateDependencies    Succeeded     < 1sec
+Rollback                Skipped                // Skipped: because of Backup
+RemoveBackup            Skipped                // Skipped: because of Backup
+────────────────────────────────────────────
+Total                                   1:49
+════════════════════════════════════════════
+​
+Build succeeded on 11/21/2026 12:41:53. ＼（＾ᴗ＾）／
+VirtoCommerce.ApplicationInsights
+VirtoCommerce.Assets
+VirtoCommerce.AuthorizeNetPayment
+VirtoCommerce.AvalaraTax
+VirtoCommerce.AzureAD
+VirtoCommerce.AzureBlobAssets
+VirtoCommerce.AzureSearch
+VirtoCommerce.BackgroundJobs
+VirtoCommerce.BackupRestore
+VirtoCommerce.BulkActionsModule
+VirtoCommerce.Cart
+VirtoCommerce.Catalog
+VirtoCommerce.CatalogCsvImportModule
+VirtoCommerce.CatalogPersonalization
+VirtoCommerce.CatalogPublishing
+VirtoCommerce.Content
+VirtoCommerce.Contracts
+VirtoCommerce.Core
+VirtoCommerce.Customer
+VirtoCommerce.CustomerReviews
+VirtoCommerce.DynamicAssociationsModule
+VirtoCommerce.ElasticSearch8
+VirtoCommerce.Export
+VirtoCommerce.FileExperienceApi
+VirtoCommerce.FileSystemAssets
+VirtoCommerce.GDPR
+VirtoCommerce.GoogleEcommerceAnalytics
+VirtoCommerce.GoogleSSO
+VirtoCommerce.ImageTools
+VirtoCommerce.Inventory
+VirtoCommerce.LuceneSearch
+VirtoCommerce.Marketing
+VirtoCommerce.Notifications
+VirtoCommerce.OpenTelemetry
+VirtoCommerce.Orders
+VirtoCommerce.PageBuilderModule
+VirtoCommerce.Pages
+VirtoCommerce.Payment
+VirtoCommerce.Pricing
+VirtoCommerce.ProfileExperienceApiModule
+VirtoCommerce.PushMessages
+VirtoCommerce.Return
+VirtoCommerce.Search
+VirtoCommerce.Seo
+VirtoCommerce.Shipping
+VirtoCommerce.Sitemaps
+VirtoCommerce.Store
+VirtoCommerce.Subscription
+VirtoCommerce.Tax
+VirtoCommerce.UCP
+VirtoCommerce.WebHooks
+VirtoCommerce.WhiteLabeling
+VirtoCommerce.XCMS
+VirtoCommerce.XCart
+VirtoCommerce.XCatalog
+VirtoCommerce.XFrontend
+VirtoCommerce.XOrder
+VirtoCommerce.XPickup
+VirtoCommerce.Xapi
+[1;34m[12:41:55][0m Restarting platform to load modules
+ Image ghcr.io/virtocommerce/platform:3.1076.13 Pulling 
+ 4f4fb700ef54 Pulling fs layer 0B
+ 7a48b8f0e5c7 Pulling fs layer 0B
+ a6527f367cbd Pulling fs layer 0B
+ 3b3318ee60c5 Pulling fs layer 0B
+ b00ed38d93db Pulling fs layer 0B
+ 344c206498b5 Pulling fs layer 0B
+ 22891b58135d Pulling fs layer 0B
+ 37905d3f67c2 Pulling fs layer 0B
+ 23c4ce01e258 Pulling fs layer 0B
+ c4b380b1c73c Pulling fs layer 0B
+ 2525f3d6a4c4 Pulling fs layer 0B
+ 4f4fb700ef54 Pulling fs layer 0B
+ 4f4fb700ef54 Already exists 0B
+ 4f4fb700ef54 Pull complete 0B
+ 7a48b8f0e5c7 Downloading 2.097MB
+ 7a48b8f0e5c7 Downloading 3.146MB
+ 7a48b8f0e5c7 Downloading 5.243MB
+ 7a48b8f0e5c7 Downloading 7.34MB
+ b00ed38d93db Download complete 0B
+ 7a48b8f0e5c7 Downloading 9.437MB
+ a6527f367cbd Downloading 1.049MB
+ 7a48b8f0e5c7 Downloading 10.49MB
+ 7a48b8f0e5c7 Downloading 11.53MB
+ a6527f367cbd Downloading 2.097MB
+ a6527f367cbd Downloading 3.146MB
+ 7a48b8f0e5c7 Downloading 12.58MB
+ a6527f367cbd Downloading 4.194MB
+ 7a48b8f0e5c7 Downloading 13.63MB
+ a6527f367cbd Downloading 6.291MB
+ 7a48b8f0e5c7 Downloading 14.68MB
+ 7a48b8f0e5c7 Downloading 16.78MB
+ a6527f367cbd Downloading 7.34MB
+ 7a48b8f0e5c7 Downloading 17.83MB
+ a6527f367cbd Downloading 8.389MB
+ 7a48b8f0e5c7 Downloading 18.87MB
+ a6527f367cbd Downloading 9.437MB
+ a6527f367cbd Downloading 10.49MB
+ 7a48b8f0e5c7 Downloading 19.92MB
+ 7a48b8f0e5c7 Downloading 23.07MB
+ a6527f367cbd Downloading 10.49MB
+ 7a48b8f0e5c7 Downloading 24.12MB
+ a6527f367cbd Downloading 11.53MB
+ 7a48b8f0e5c7 Downloading 25.17MB
+ a6527f367cbd Downloading 12.58MB
+ 7a48b8f0e5c7 Downloading 27.26MB
+ a6527f367cbd Downloading 12.58MB
+ a6527f367cbd Downloading 12.75MB
+ 7a48b8f0e5c7 Downloading 29.77MB
+ 7a48b8f0e5c7 Downloading 29.77MB
+ a6527f367cbd Downloading 12.75MB
+ 7a48b8f0e5c7 Downloading 29.77MB
+ a6527f367cbd Download complete 0B
+ 7a48b8f0e5c7 Download complete 0B
+ 7a48b8f0e5c7 Extracting 1B
+ 3b3318ee60c5 Downloading 1.049MB
+ 344c206498b5 Download complete 0B
+ 7a48b8f0e5c7 Extracting 1B
+ 3b3318ee60c5 Downloading 1.049MB
+ 7a48b8f0e5c7 Extracting 1B
+ 3b3318ee60c5 Downloading 1.077MB
+ 7a48b8f0e5c7 Extracting 1B
+ 3b3318ee60c5 Downloading 3.146MB
+ 7a48b8f0e5c7 Extracting 1B
+ 3b3318ee60c5 Downloading 3.146MB
+ 7a48b8f0e5c7 Extracting 1B
+ 22891b58135d Download complete 0B
+ 3b3318ee60c5 Downloading 4.194MB
+ 7a48b8f0e5c7 Extracting 1B
+ 3b3318ee60c5 Downloading 6.291MB
+ 7a48b8f0e5c7 Extracting 1B
+ 3b3318ee60c5 Downloading 7.311MB
+ 7a48b8f0e5c7 Extracting 1B
+ 3b3318ee60c5 Downloading 8.389MB
+ 7a48b8f0e5c7 Extracting 1B
+ 3b3318ee60c5 Downloading 9.437MB
+ 7a48b8f0e5c7 Extracting 1B
+ 3b3318ee60c5 Downloading 10.49MB
+ 37905d3f67c2 Downloading 1.049MB
+ 7a48b8f0e5c7 Extracting 2B
+ 37905d3f67c2 Downloading 1.049MB
+ c4b380b1c73c Downloading 1.049MB
+ 3b3318ee60c5 Downloading 10.49MB
+ 7a48b8f0e5c7 Extracting 2B
+ 3b3318ee60c5 Downloading 10.49MB
+ 37905d3f67c2 Downloading 1.049MB
+ c4b380b1c73c Downloading 2.097MB
+ 7a48b8f0e5c7 Extracting 2B
+ 37905d3f67c2 Downloading 2.097MB
+ c4b380b1c73c Downloading 3.109MB
+ 3b3318ee60c5 Downloading 11.53MB
+ 7a48b8f0e5c7 Extracting 2B
+ 3b3318ee60c5 Downloading 11.53MB
+ 37905d3f67c2 Downloading 2.097MB
+ c4b380b1c73c Downloading 3.146MB
+ 7a48b8f0e5c7 Extracting 2B
+ 3b3318ee60c5 Downloading 12.14MB
+ 37905d3f67c2 Downloading 3.146MB
+ c4b380b1c73c Downloading 4.194MB
+ 7a48b8f0e5c7 Extracting 2B
+ 37905d3f67c2 Downloading 4.194MB
+ c4b380b1c73c Downloading 4.194MB
+ 3b3318ee60c5 Downloading 12.58MB
+ 7a48b8f0e5c7 Extracting 2B
+ 37905d3f67c2 Downloading 4.194MB
+ c4b380b1c73c Downloading 5.243MB
+ 3b3318ee60c5 Downloading 13.63MB
+ 7a48b8f0e5c7 Extracting 2B
+ 37905d3f67c2 Downloading 5.243MB
+ c4b380b1c73c Downloading 6.291MB
+ 3b3318ee60c5 Downloading 14.68MB
+ 7a48b8f0e5c7 Extracting 2B
+ 3b3318ee60c5 Downloading 14.68MB
+ 37905d3f67c2 Downloading 6.291MB
+ c4b380b1c73c Downloading 6.291MB
+ 7a48b8f0e5c7 Extracting 3B
+ 37905d3f67c2 Downloading 7.34MB
+ c4b380b1c73c Downloading 7.34MB
+ 3b3318ee60c5 Downloading 15.73MB
+ 7a48b8f0e5c7 Extracting 3B
+ 37905d3f67c2 Downloading 8.389MB
+ c4b380b1c73c Downloading 8.389MB
+ 3b3318ee60c5 Downloading 16.78MB
+ 7a48b8f0e5c7 Extracting 3B
+ 37905d3f67c2 Downloading 9.437MB
+ c4b380b1c73c Downloading 9.437MB
+ 7a48b8f0e5c7 Extracting 3B
+ 37905d3f67c2 Downloading 10.49MB
+ c4b380b1c73c Downloading 10.49MB
+ 3b3318ee60c5 Download complete 0B
+ 7a48b8f0e5c7 Extracting 3B
+ 37905d3f67c2 Downloading 11.53MB
+ c4b380b1c73c Downloading 11.53MB
+ 7a48b8f0e5c7 Extracting 3B
+ 37905d3f67c2 Downloading 12.58MB
+ c4b380b1c73c Downloading 12.58MB
+ 7a48b8f0e5c7 Extracting 3B
+ 37905d3f67c2 Downloading 13.63MB
+ c4b380b1c73c Downloading 13.63MB
+ 7a48b8f0e5c7 Pull complete 0B
+ 37905d3f67c2 Downloading 14.68MB
+ c4b380b1c73c Downloading 14.68MB
+ 3b3318ee60c5 Extracting 1B
+ 2525f3d6a4c4 Downloading 1.049MB
+ 37905d3f67c2 Downloading 14.68MB
+ c4b380b1c73c Downloading 15.73MB
+ 3b3318ee60c5 Extracting 1B
+ 2525f3d6a4c4 Downloading 2.097MB
+ 37905d3f67c2 Downloading 15.73MB
+ c4b380b1c73c Downloading 16.78MB
+ 3b3318ee60c5 Extracting 1B
+ 2525f3d6a4c4 Downloading 2.097MB
+ 37905d3f67c2 Downloading 15.73MB
+ c4b380b1c73c Downloading 16.78MB
+ 3b3318ee60c5 Extracting 1B
+ 2525f3d6a4c4 Downloading 3.146MB
+ 37905d3f67c2 Downloading 16.78MB
+ c4b380b1c73c Downloading 17.83MB
+ 3b3318ee60c5 Extracting 1B
+ 2525f3d6a4c4 Downloading 4.194MB
+ 37905d3f67c2 Downloading 17.83MB
+ c4b380b1c73c Downloading 18.58MB
+ 3b3318ee60c5 Extracting 1B
+ 2525f3d6a4c4 Downloading 4.985MB
+ 37905d3f67c2 Downloading 18.87MB
+ c4b380b1c73c Downloading 18.87MB
+ 3b3318ee60c5 Extracting 1B
+ 2525f3d6a4c4 Downloading 5.132MB
+ 37905d3f67c2 Downloading 19.05MB
+ c4b380b1c73c Downloading 18.96MB
+ 3b3318ee60c5 Extracting 1B
+ 2525f3d6a4c4 Downloading 5.902MB
+ 37905d3f67c2 Downloading 19.92MB
+ c4b380b1c73c Downloading 19.92MB
+ 3b3318ee60c5 Extracting 1B
+ 37905d3f67c2 Downloading 20.97MB
+ c4b380b1c73c Downloading 20.97MB
+ 2525f3d6a4c4 Downloading 7.34MB
+ 3b3318ee60c5 Extracting 1B
+ c4b380b1c73c Downloading 22.02MB
+ 2525f3d6a4c4 Downloading 7.34MB
+ 37905d3f67c2 Downloading 22.02MB
+ 3b3318ee60c5 Extracting 1B
+ 2525f3d6a4c4 Downloading 8.389MB
+ 37905d3f67c2 Downloading 23.07MB
+ c4b380b1c73c Downloading 23.07MB
+ 3b3318ee60c5 Extracting 2B
+ 2525f3d6a4c4 Downloading 9.437MB
+ 37905d3f67c2 Downloading 24.12MB
+ c4b380b1c73c Downloading 24.12MB
+ 3b3318ee60c5 Extracting 2B
+ 2525f3d6a4c4 Downloading 10.49MB
+ 37905d3f67c2 Downloading 25.08MB
+ c4b380b1c73c Downloading 24.12MB
+ 3b3318ee60c5 Extracting 2B
+ 2525f3d6a4c4 Downloading 11.53MB
+ 37905d3f67c2 Downloading 25.17MB
+ c4b380b1c73c Downloading 25.17MB
+ 3b3318ee60c5 Extracting 2B
+ 37905d3f67c2 Downloading 26.21MB
+ c4b380b1c73c Downloading 26.21MB
+ 2525f3d6a4c4 Downloading 11.53MB
+ 37905d3f67c2 Downloading 27.26MB
+ c4b380b1c73c Downloading 26.21MB
+ 2525f3d6a4c4 Downloading 12.58MB
+ 3b3318ee60c5 Pull complete 0B
+ 2525f3d6a4c4 Downloading 13.63MB
+ 37905d3f67c2 Downloading 27.26MB
+ c4b380b1c73c Downloading 27.26MB
+ 344c206498b5 Extracting 1B
+ 37905d3f67c2 Downloading 28.31MB
+ c4b380b1c73c Downloading 28.31MB
+ 2525f3d6a4c4 Downloading 14.68MB
+ 344c206498b5 Pull complete 0B
+ 2525f3d6a4c4 Downloading 15.73MB
+ 37905d3f67c2 Downloading 29.36MB
+ c4b380b1c73c Downloading 29.36MB
+ 2525f3d6a4c4 Downloading 16.73MB
+ 37905d3f67c2 Downloading 30.41MB
+ c4b380b1c73c Downloading 30.41MB
+ 37905d3f67c2 Downloading 31.46MB
+ c4b380b1c73c Downloading 31.1MB
+ 2525f3d6a4c4 Downloading 16.78MB
+ 37905d3f67c2 Downloading 32.51MB
+ c4b380b1c73c Downloading 32.51MB
+ 2525f3d6a4c4 Downloading 17.83MB
+ 37905d3f67c2 Downloading 32.51MB
+ c4b380b1c73c Downloading 33.55MB
+ 2525f3d6a4c4 Downloading 18.87MB
+ 2525f3d6a4c4 Downloading 19.92MB
+ 37905d3f67c2 Downloading 33.55MB
+ c4b380b1c73c Downloading 34.6MB
+ 37905d3f67c2 Downloading 34.6MB
+ c4b380b1c73c Downloading 35.65MB
+ 2525f3d6a4c4 Downloading 20.97MB
+ 2525f3d6a4c4 Downloading 22.02MB
+ 37905d3f67c2 Downloading 35.65MB
+ c4b380b1c73c Downloading 36.7MB
+ 2525f3d6a4c4 Downloading 23.07MB
+ 37905d3f67c2 Downloading 36.7MB
+ c4b380b1c73c Downloading 37.15MB
+ 2525f3d6a4c4 Downloading 23.47MB
+ 37905d3f67c2 Downloading 37.75MB
+ c4b380b1c73c Downloading 37.78MB
+ c4b380b1c73c Downloading 39.5MB
+ 2525f3d6a4c4 Downloading 24.95MB
+ 37905d3f67c2 Downloading 38.8MB
+ 2525f3d6a4c4 Downloading 26.21MB
+ 37905d3f67c2 Downloading 39.85MB
+ c4b380b1c73c Downloading 40.23MB
+ 2525f3d6a4c4 Downloading 27.26MB
+ 37905d3f67c2 Downloading 40.89MB
+ c4b380b1c73c Downloading 41.92MB
+ c4b380b1c73c Downloading 41.94MB
+ 2525f3d6a4c4 Downloading 27.26MB
+ 37905d3f67c2 Downloading 41.94MB
+ 37905d3f67c2 Downloading 42.99MB
+ c4b380b1c73c Downloading 42.99MB
+ 2525f3d6a4c4 Downloading 28.31MB
+ 37905d3f67c2 Downloading 42.99MB
+ c4b380b1c73c Downloading 44.04MB
+ 2525f3d6a4c4 Downloading 29.36MB
+ 37905d3f67c2 Downloading 44.04MB
+ c4b380b1c73c Downloading 45.09MB
+ 2525f3d6a4c4 Downloading 30.41MB
+ 37905d3f67c2 Downloading 45.09MB
+ c4b380b1c73c Downloading 46.14MB
+ 2525f3d6a4c4 Downloading 31.46MB
+ 2525f3d6a4c4 Downloading 32.51MB
+ 37905d3f67c2 Downloading 46.14MB
+ c4b380b1c73c Downloading 47.19MB
+ 37905d3f67c2 Downloading 47.19MB
+ c4b380b1c73c Downloading 47.19MB
+ 2525f3d6a4c4 Downloading 33.55MB
+ 37905d3f67c2 Downloading 48.23MB
+ c4b380b1c73c Downloading 48.74MB
+ 2525f3d6a4c4 Downloading 34.55MB
+ 37905d3f67c2 Downloading 49.28MB
+ c4b380b1c73c Downloading 49.28MB
+ 2525f3d6a4c4 Downloading 35.65MB
+ 37905d3f67c2 Downloading 50.33MB
+ c4b380b1c73c Downloading 51.04MB
+ 2525f3d6a4c4 Downloading 36.63MB
+ 37905d3f67c2 Downloading 51.64MB
+ c4b380b1c73c Downloading 52.43MB
+ 2525f3d6a4c4 Downloading 36.63MB
+ c4b380b1c73c Downloading 53.46MB
+ 2525f3d6a4c4 Download complete 0B
+ 37905d3f67c2 Downloading 53.48MB
+ 2525f3d6a4c4 Extracting 1B
+ 37905d3f67c2 Downloading 54.53MB
+ c4b380b1c73c Downloading 54.53MB
+ 2525f3d6a4c4 Extracting 1B
+ 37905d3f67c2 Downloading 55.57MB
+ c4b380b1c73c Downloading 55.37MB
+ 2525f3d6a4c4 Extracting 1B
+ 37905d3f67c2 Downloading 56.62MB
+ c4b380b1c73c Downloading 56.62MB
+ 2525f3d6a4c4 Extracting 1B
+ 37905d3f67c2 Downloading 57.67MB
+ c4b380b1c73c Downloading 57.67MB
+ 23c4ce01e258 Download complete 0B
+ 2525f3d6a4c4 Extracting 1B
+ 37905d3f67c2 Downloading 58.72MB
+ c4b380b1c73c Downloading 59.35MB
+ 2525f3d6a4c4 Extracting 1B
+ 37905d3f67c2 Downloading 60.26MB
+ c4b380b1c73c Downloading 60.82MB
+ 2525f3d6a4c4 Extracting 1B
+ 37905d3f67c2 Downloading 60.26MB
+ c4b380b1c73c Downloading 61.87MB
+ 2525f3d6a4c4 Extracting 1B
+ 37905d3f67c2 Downloading 60.26MB
+ c4b380b1c73c Downloading 62.91MB
+ 2525f3d6a4c4 Extracting 1B
+ 37905d3f67c2 Downloading 60.26MB
+ c4b380b1c73c Downloading 65.01MB
+ 2525f3d6a4c4 Extracting 1B
+ 37905d3f67c2 Downloading 60.26MB
+ c4b380b1c73c Downloading 66.06MB
+ 2525f3d6a4c4 Extracting 2B
+ c4b380b1c73c Downloading 67.51MB
+ 2525f3d6a4c4 Extracting 2B
+ 37905d3f67c2 Download complete 0B
+ c4b380b1c73c Downloading 69.21MB
+ 2525f3d6a4c4 Extracting 2B
+ c4b380b1c73c Downloading 70.78MB
+ 2525f3d6a4c4 Extracting 2B
+ c4b380b1c73c Downloading 72.35MB
+ 2525f3d6a4c4 Extracting 2B
+ c4b380b1c73c Downloading 73.4MB
+ 2525f3d6a4c4 Extracting 2B
+ c4b380b1c73c Downloading 74.45MB
+ 2525f3d6a4c4 Extracting 2B
+ c4b380b1c73c Downloading 75.5MB
+ b00ed38d93db Extracting 1B
+ 2525f3d6a4c4 Pull complete 0B
+ c4b380b1c73c Downloading 77.59MB
+ b00ed38d93db Pull complete 0B
+ c4b380b1c73c Downloading 77.81MB
+ a6527f367cbd Extracting 1B
+ c4b380b1c73c Downloading 79.69MB
+ a6527f367cbd Extracting 1B
+ c4b380b1c73c Downloading 80.74MB
+ a6527f367cbd Extracting 1B
+ c4b380b1c73c Downloading 82.77MB
+ a6527f367cbd Extracting 1B
+ c4b380b1c73c Downloading 82.86MB
+ a6527f367cbd Extracting 1B
+ c4b380b1c73c Downloading 82.96MB
+ a6527f367cbd Extracting 1B
+ c4b380b1c73c Downloading 83.03MB
+ a6527f367cbd Extracting 1B
+ c4b380b1c73c Downloading 83.84MB
+ a6527f367cbd Extracting 2B
+ c4b380b1c73c Downloading 84.02MB
+ a6527f367cbd Extracting 2B
+ c4b380b1c73c Downloading 85.98MB
+ a6527f367cbd Extracting 2B
+ c4b380b1c73c Downloading 87.03MB
+ c4b380b1c73c Downloading 88.06MB
+ a6527f367cbd Pull complete 0B
+ 37905d3f67c2 Extracting 1B
+ c4b380b1c73c Downloading 89.13MB
+ 37905d3f67c2 Extracting 1B
+ c4b380b1c73c Downloading 91.19MB
+ 37905d3f67c2 Extracting 1B
+ c4b380b1c73c Downloading 92.27MB
+ 37905d3f67c2 Extracting 1B
+ c4b380b1c73c Downloading 92.27MB
+ 37905d3f67c2 Extracting 1B
+ c4b380b1c73c Downloading 93.47MB
+ 37905d3f67c2 Extracting 1B
+ c4b380b1c73c Downloading 94.37MB
+ 37905d3f67c2 Extracting 1B
+ c4b380b1c73c Downloading 94.37MB
+ 37905d3f67c2 Extracting 1B
+ c4b380b1c73c Downloading 95.73MB
+ 37905d3f67c2 Extracting 1B
+ c4b380b1c73c Downloading 96.84MB
+ 37905d3f67c2 Extracting 1B
+ c4b380b1c73c Downloading 97.95MB
+ 37905d3f67c2 Extracting 1B
+ c4b380b1c73c Downloading 98.76MB
+ 37905d3f67c2 Extracting 2B
+ c4b380b1c73c Downloading 99.81MB
+ 37905d3f67c2 Extracting 2B
+ c4b380b1c73c Downloading 102.1MB
+ 37905d3f67c2 Extracting 2B
+ c4b380b1c73c Downloading 103MB
+ 37905d3f67c2 Extracting 2B
+ c4b380b1c73c Downloading 104.9MB
+ 37905d3f67c2 Extracting 2B
+ c4b380b1c73c Downloading 105.8MB
+ 37905d3f67c2 Extracting 2B
+ c4b380b1c73c Downloading 107MB
+ 37905d3f67c2 Extracting 2B
+ c4b380b1c73c Downloading 108MB
+ 37905d3f67c2 Extracting 2B
+ c4b380b1c73c Downloading 109.4MB
+ 37905d3f67c2 Extracting 2B
+ c4b380b1c73c Downloading 110.2MB
+ 37905d3f67c2 Extracting 2B
+ c4b380b1c73c Downloading 112.2MB
+ 37905d3f67c2 Extracting 3B
+ c4b380b1c73c Downloading 112.7MB
+ 37905d3f67c2 Extracting 3B
+ c4b380b1c73c Downloading 112.7MB
+ 37905d3f67c2 Extracting 3B
+ c4b380b1c73c Downloading 112.7MB
+ 37905d3f67c2 Extracting 3B
+ c4b380b1c73c Download complete 0B
+ 37905d3f67c2 Extracting 3B
+ 37905d3f67c2 Extracting 3B
+ 37905d3f67c2 Extracting 3B
+ 37905d3f67c2 Extracting 3B
+ 37905d3f67c2 Extracting 4B
+ 37905d3f67c2 Extracting 4B
+ 37905d3f67c2 Extracting 4B
+ 37905d3f67c2 Extracting 4B
+ 37905d3f67c2 Extracting 4B
+ 37905d3f67c2 Extracting 4B
+ 37905d3f67c2 Extracting 4B
+ 37905d3f67c2 Extracting 4B
+ 37905d3f67c2 Extracting 4B
+ 37905d3f67c2 Extracting 4B
+ 37905d3f67c2 Extracting 4B
+ 37905d3f67c2 Extracting 5B
+ 37905d3f67c2 Extracting 5B
+ 37905d3f67c2 Extracting 5B
+ 37905d3f67c2 Extracting 5B
+ 37905d3f67c2 Extracting 5B
+ 37905d3f67c2 Extracting 5B
+ 37905d3f67c2 Extracting 5B
+ 37905d3f67c2 Extracting 5B
+ 37905d3f67c2 Extracting 5B
+ 37905d3f67c2 Extracting 5B
+ 37905d3f67c2 Extracting 6B
+ 37905d3f67c2 Extracting 6B
+ 37905d3f67c2 Extracting 6B
+ 37905d3f67c2 Extracting 6B
+ 37905d3f67c2 Extracting 6B
+ 37905d3f67c2 Extracting 6B
+ 37905d3f67c2 Extracting 6B
+ 37905d3f67c2 Extracting 6B
+ 37905d3f67c2 Extracting 6B
+ 37905d3f67c2 Extracting 6B
+ 37905d3f67c2 Extracting 7B
+ 37905d3f67c2 Extracting 7B
+ 37905d3f67c2 Extracting 7B
+ 37905d3f67c2 Extracting 7B
+ 37905d3f67c2 Extracting 7B
+ 37905d3f67c2 Extracting 7B
+ 37905d3f67c2 Extracting 7B
+ 37905d3f67c2 Extracting 7B
+ 37905d3f67c2 Extracting 7B
+ 37905d3f67c2 Extracting 7B
+ 37905d3f67c2 Extracting 8B
+ 23c4ce01e258 Pull complete 0B
+ 37905d3f67c2 Pull complete 0B
+ 22891b58135d Pull complete 0B
+ c4b380b1c73c Extracting 1B
+ c4b380b1c73c Extracting 1B
+ c4b380b1c73c Extracting 1B
+ c4b380b1c73c Extracting 1B
+ c4b380b1c73c Extracting 1B
+ c4b380b1c73c Extracting 1B
+ c4b380b1c73c Extracting 1B
+ c4b380b1c73c Extracting 1B
+ c4b380b1c73c Extracting 1B
+ c4b380b1c73c Extracting 1B
+ c4b380b1c73c Extracting 1B
+ c4b380b1c73c Extracting 2B
+ c4b380b1c73c Extracting 2B
+ c4b380b1c73c Extracting 2B
+ c4b380b1c73c Extracting 2B
+ c4b380b1c73c Extracting 2B
+ c4b380b1c73c Extracting 2B
+ c4b380b1c73c Extracting 2B
+ c4b380b1c73c Extracting 2B
+ c4b380b1c73c Extracting 2B
+ c4b380b1c73c Extracting 2B
+ c4b380b1c73c Extracting 3B
+ c4b380b1c73c Extracting 3B
+ c4b380b1c73c Extracting 3B
+ c4b380b1c73c Extracting 3B
+ c4b380b1c73c Extracting 3B
+ c4b380b1c73c Extracting 3B
+ c4b380b1c73c Extracting 3B
+ c4b380b1c73c Extracting 3B
+ c4b380b1c73c Extracting 3B
+ c4b380b1c73c Extracting 3B
+ c4b380b1c73c Extracting 4B
+ c4b380b1c73c Extracting 4B
+ c4b380b1c73c Extracting 4B
+ c4b380b1c73c Extracting 4B
+ c4b380b1c73c Extracting 4B
+ c4b380b1c73c Extracting 4B
+ c4b380b1c73c Extracting 4B
+ c4b380b1c73c Extracting 4B
+ c4b380b1c73c Extracting 4B
+ c4b380b1c73c Extracting 4B
+ c4b380b1c73c Extracting 5B
+ c4b380b1c73c Extracting 5B
+ c4b380b1c73c Extracting 5B
+ c4b380b1c73c Extracting 5B
+ c4b380b1c73c Pull complete 0B
+ Image ghcr.io/virtocommerce/platform:3.1076.13 Pulled 
+ Container virto-elasticsearch-1 Running 
+ Container virto-redis-1 Running 
+ Container virto-sqlserver-1 Running 
+ Container virto-platform-1 Recreate 
+ Container virto-platform-1 Recreated 
+ Container virto-elasticsearch-1 Waiting 
+ Container virto-redis-1 Waiting 
+ Container virto-sqlserver-1 Waiting 
+ Container virto-redis-1 Healthy 
+ Container virto-elasticsearch-1 Healthy 
+ Container virto-sqlserver-1 Healthy 
+ Container virto-platform-1 Starting 
+ Container virto-platform-1 Started 

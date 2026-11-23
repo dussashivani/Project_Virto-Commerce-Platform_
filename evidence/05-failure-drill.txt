@@ -1,0 +1,27 @@
+[13:52:12] Baseline: platform -> 200 ; graphql -> {"data":{"store":{"storeId":"B2B-store"}}} http=200
+[13:52:12] INJECT: docker compose stop redis
+  during failure: platform -> 200 ; graphql -> {"data":{"store":{"storeId":"B2B-store"}}} http=200
+  (record this in evidence; behaviour depends on version)
+  | platform-1  |    at VirtoCommerce.SearchModule.Data.Services.IndexingManager.ProcessDocumentsAsync(IndexDocumentChangeType changeType, IList`1 documentIds, BatchIndexingOptions batchOptions, CancellationToken cancellationToken
+  | platform-1  |    at VirtoCommerce.SearchModule.Data.Services.IndexingManager.ProcessChangesAsync(IList`1 changes, BatchIndexingOptions batchOptions, CancellationToken cancellationToken) in /home/runner/work/vc-module-search/vc
+  | platform-1  |    at VirtoCommerce.SearchModule.Data.Services.IndexingManager.ProcessConfigurationAsync(IndexDocumentConfiguration configuration, IndexingOptions options, Action`1 progressCallback, CancellationToken cancellatio
+  | platform-1  |    at VirtoCommerce.SearchModule.Data.Services.IndexingManager.IndexAsync(IndexingOptions options, Action`1 progressCallback, CancellationToken cancellationToken) in /home/runner/work/vc-module-search/vc-module-s
+  | platform-1  |    at VirtoCommerce.SearchModule.Data.BackgroundJobs.IndexingJobs.IndexChangesAsync(IndexingOptions options, CancellationToken cancellationToken) in /home/runner/work/vc-module-search/vc-module-search/src/VirtoCo
+  | platform-1  |    at VirtoCommerce.SearchModule.Data.BackgroundJobs.IndexingJobs.<>c__DisplayClass30_0.<<RunIndexJobAsync>b__0>d.MoveNext() in /home/runner/work/vc-module-search/vc-module-search/src/VirtoCommerce.SearchModule.D
+  | platform-1  | [13:52:01 ERR] VirtoCommerce.SearchModule.Core.Exceptions.SearchException: There's no registered Search Provider. Please install at least one Search Module implementation (Lucene, Elastic Search or Azure Search).
+  | platform-1  |    at VirtoCommerce.SearchModule.Data.Services.DummySearchProvider.IndexAsync(String documentType, IList`1 documents) in /home/runner/work/vc-module-search/vc-module-search/src/VirtoCommerce.SearchModule.Data/Ser
+  | platform-1  |    at VirtoCommerce.SearchModule.Data.Services.SearchGateway.IndexAsync(String documentType, IList`1 documents) in /home/runner/work/vc-module-search/vc-module-search/src/VirtoCommerce.SearchModule.Data/Services/
+  | platform-1  |    at VirtoCommerce.SearchModule.Data.Services.IndexingManager.ProcessDocumentsAsync(IndexDocumentChangeType changeType, IList`1 documentIds, BatchIndexingOptions batchOptions, CancellationToken cancellationToken
+  | platform-1  |    at VirtoCommerce.SearchModule.Data.Services.IndexingManager.ProcessChangesAsync(IList`1 changes, BatchIndexingOptions batchOptions, CancellationToken cancellationToken) in /home/runner/work/vc-module-search/vc
+  | platform-1  |    at VirtoCommerce.SearchModule.Data.Services.IndexingManager.ProcessConfigurationAsync(IndexDocumentConfiguration configuration, IndexingOptions options, Action`1 progressCallback, CancellationToken cancellatio
+  | platform-1  |    at VirtoCommerce.SearchModule.Data.Services.IndexingManager.IndexAsync(IndexingOptions options, Action`1 progressCallback, CancellationToken cancellationToken) in /home/runner/work/vc-module-search/vc-module-s
+  | platform-1  |    at VirtoCommerce.SearchModule.Data.BackgroundJobs.IndexingJobs.IndexChangesAsync(IndexingOptions options, CancellationToken cancellationToken) in /home/runner/work/vc-module-search/vc-module-search/src/VirtoCo
+  | platform-1  |    at VirtoCommerce.SearchModule.Data.BackgroundJobs.IndexingJobs.<>c__DisplayClass30_0.<<RunIndexJobAsync>b__0>d.MoveNext() in /home/runner/work/vc-module-search/vc-module-search/src/VirtoCommerce.SearchModule.D
+  | platform-1  | [13:52:08 WRN] Failed to determine the https port for redirect.
+  | platform-1  | [13:52:12 ERR] Redis disconnected from instance c97c070fa8f0_fd411d13f6eb4ccc928d6167ede8bf94. Endpoint is Unspecified/redis:6379, failure type is SocketClosed
+  | platform-1  | [13:52:12 ERR] Redis disconnected from instance c97c070fa8f0_fd411d13f6eb4ccc928d6167ede8bf94. Endpoint is Unspecified/redis:6379, failure type is UnableToConnect
+  | platform-1  | [13:52:12 ERR] Redis disconnected from instance c97c070fa8f0_03e79be541b342a7b68c4dea44e14773. Endpoint is Unspecified/redis:6379, failure type is SocketClosed
+  | platform-1  | [13:52:12 ERR] Redis disconnected from instance c97c070fa8f0_03e79be541b342a7b68c4dea44e14773. Endpoint is Unspecified/redis:6379, failure type is UnableToConnect
+[13:52:25] RECOVER: docker compose start redis
+  PASS platform recovered -> 200
+  PASS graphql recovered -> {"data":{"store":{"storeId":"B2B-store"}}} http=200

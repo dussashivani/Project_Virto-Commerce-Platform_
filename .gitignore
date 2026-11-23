@@ -1,0 +1,43 @@
+# --- secrets & local runtime
+# Environment secrets
+.env
+.env.*
+!.env.example
+.env.lock
+# Terraform generated files and state
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+# Backups and local data
+*.bak
+*.backup
+backups/
+# Virto Commerce local runtime and downloaded files
+.nuke/
+app_data/
+/modules/
+admin-shell.zip
+admin-shell-release.json
+# Frontend local repository and sensitive configuration
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+frontend/.certificates/
+frontend/.yarn/
+frontend/node_modules/
+.terraform/
+.terraform.lock.hcl.bak
+*.tfvars
+!*.tfvars.example
+evidence/raw/
+# downloaded vc-frontend release (scripts/fetch-frontend.sh)
+frontend/artifact/
+frontend/frontend.zip
+.env.ci-check.*

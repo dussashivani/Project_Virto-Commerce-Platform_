@@ -1,0 +1,31 @@
+[14:44:27] Pulling previous images
+[14:44:31] Recreating services on the previous images
+[14:44:39] Verifying that the rolled-back images are running
+  PASS FRONTEND_IMAGE running as nginx:1.27-alpine
+[14:44:40] 1. Container health
+  PASS sqlserver healthy
+  PASS elasticsearch healthy
+  PASS redis healthy
+  PASS platform healthy
+[14:44:42] 2. Platform HTTP
+  PASS platform / -> 200
+  info: platform /health -> 200 (endpoint availability depends on platform version)
+[14:44:43] 3. Dependencies reachable from platform container (network-level)
+  PASS platform -> sqlserver:1433
+  PASS platform -> elasticsearch:9200
+  PASS platform -> redis:6379
+[14:44:44] 4. DB / search / cache not exposed on the host
+  PASS host port 1433 closed
+  PASS host port 9200 closed
+  PASS host port 6379 closed
+[14:44:51] 5. Frontend (vc-frontend + nginx) and frontend<->platform communication
+  PASS frontend healthy
+  PASS frontend / -> 200
+  PASS frontend -> platform GraphQL returned store B2B-store (needs sample data)
+  PASS search index serves products (totalCount=147)
+  PASS no upstream errors in frontend logs
+
+ALL CHECKS PASSED
+
+## Roll forward to current release (up.sh --with-storefront)
+frontend image: nginx:1.30.7-alpine

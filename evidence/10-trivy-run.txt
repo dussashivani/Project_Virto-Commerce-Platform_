@@ -1,0 +1,11 @@
+[1;34m[14:41:47][0m Scanning 7 images with aquasec/trivy:0.58.1 (first run downloads the vulnerability DB)
+IMAGE                                                              HIGH CRITICAL CRIT(fixable)
+docker.elastic.co/elasticsearch/elasticsearch:8.15.3                112        9            9
+ghcr.io/virtocommerce/platform:3.1076.13                              4        0            0
+mcr.microsoft.com/dotnet/sdk:10.0                                     0        0            0
+mcr.microsoft.com/mssql/server:2022-latest                            3        0            0
+nginx:1.30.7-alpine                                                   1        0            0
+redis:7.4-alpine                                                      0        0            0
+virtocommerce/storefront:latest                                     108       12           11
+
+Per-image reports: evidence/trivy/*.txt  (HIGH+CRITICAL). 'fixable' = a patched version exists.
