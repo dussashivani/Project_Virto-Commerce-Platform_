@@ -44,6 +44,7 @@ Defined in `.env.example`. Key ones: image refs (`*_IMAGE`), `MSSQL_SA_PASSWORD`
                                      # then recreates the platform (the image ships with no modules / no admin UI)
 ./scripts/up.sh                      # sqlserver, elasticsearch, redis, platform (first start: minutes)
 ```
+If `install-modules.sh` fails with *API rate limit exceeded*, the module installer is being throttled by GitHub (60 anonymous requests/hour per IP): wait, or `export GITHUB_TOKEN=<any GitHub token, no scopes>` first (it retries 3 times on its own).
 Then in the browser (http://localhost:8090):
 1. Log in `admin` / `store` (documented Virto default). The platform **forces a password change** - choose a strong one.
 2. Install the **sample data** (gives the `B2B-store`, 9 catalogs, ~389 products).
@@ -86,6 +87,16 @@ The Platform creates and migrates the `VC_DB_NAME` database on first start (conn
 
 ## 10. Health checks and testing
 `docker compose ps` (health column) · `./scripts/validate.sh` · `./scripts/persistence-test.sh` · `./scripts/failure-drill.sh` · `./scripts/test-all.sh` (offline static checks, also in CI). Manual: open both URLs; log in to the admin; browse the storefront (categories and products must appear); real end-to-end probe: `curl -s -X POST localhost:8080/graphql -H 'Content-Type: application/json' -d '{"query":"{ products(storeId:\"B2B-store\", first:1){ totalCount } }"}'`. A green container healthcheck alone is not proof (see TROUBLESHOOTING).
+
+### CI/CD pipeline (GitHub Actions, `.github/workflows/`)
+| Workflow / job | Trigger | What it proves |
+|---|---|---|
+| `ci` / `static` | every push to `main`, every PR | shell syntax, `docker compose config`, no committed secrets (placeholders only in `.env.example`), `terraform fmt` + `validate` for `envs/floci` and `envs/aws` |
+| `ci` / `smoke` | every push to `main`, or manually (*Run workflow*, `run_smoke`) | boots the real stack on a clean runner: module install, platform, vc-frontend, then `validate`, `persistence-test`, `failure-drill`, `backup-restore-test` (fresh install, so `VALIDATE_REQUIRE_DATA=0`: proxy chain checked, catalog content is not) |
+| `ci` / `image-scan` | manual only (`run_scan`) | Trivy over every image, report only; reports uploaded as artifact `trivy-reports` |
+| `Floci Terraform Infrastructure` | pushes touching `terraform/` or `docker-compose.floci.yml`, PRs, manually | starts the Floci emulator, runs `terraform plan/apply` against it, verifies the resources with the AWS CLI; logs uploaded as `floci-terraform-evidence` |
+
+Read results: repository **Actions** tab -> pick a run -> click a job for step logs; artifacts are at the bottom of the run page. The pipeline does **not** host the application (runners are deleted after the run); to use the app, run it locally (section 5). Nothing in the pipeline touches real AWS.
 
 ## 11. Logs and troubleshooting
 `docker compose logs -f platform` (or any service), `docker compose ps -a`, `docker inspect --format '{{json .State.Health}}' <container>`. Common errors: `docs/TROUBLESHOOTING.md`.

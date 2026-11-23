@@ -9,6 +9,7 @@ Deploys **Virto Commerce Platform** and a **storefront** with Docker Compose, pr
 git clone <repo> && cd <repo-name>
 ./scripts/generate-env.sh           # random secrets -> .env (git-ignored)
 ./scripts/install-modules.sh        # ONE-TIME: install the Virto module bundle (platform image has no modules/admin UI)
+                                    # (if GitHub rate-limits it: export GITHUB_TOKEN=<any token, no scopes> and rerun)
 ./scripts/up.sh                     # db + search + redis + platform
 # open http://localhost:8090 , log in admin / store (you must change the password), install the sample data,
 # then More > Search index > Rebuild (products are invisible in the storefront until the index exists)
