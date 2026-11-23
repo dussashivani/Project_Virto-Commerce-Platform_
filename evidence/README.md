@@ -17,6 +17,12 @@ Real output captured while building and verifying this repo (no passwords, token
 | `11-rollback.txt` | image rollback and roll-forward |
 | CI runs | GitHub Actions run history of this repository (`ci`, `Floci Terraform Infrastructure`), artifact `floci-terraform-evidence` |
 
-Screenshots (add as `evidence/*.png`, cropped to the page - no browser tabs, bookmarks or account names): admin dashboard, storefront home with products, Docker Desktop container list, green Actions runs.
+| `12-admin-login.png` | Platform admin sign-in page (`localhost:8090`) |
+| `13-storefront-home.png` | vc-frontend + nginx storefront (`localhost:8080`) |
+| `14-admin-dashboard.png` | Platform admin after login: modules loaded, sample orders/revenue |
+| `15-admin-catalog.png` | Catalog: 9 catalogs, 24 items in a category. The Pic column is broken: sample data ships no image files (`docs/TROUBLESHOOTING.md`) |
+| `16-storefront-products.png` | Storefront category page: 35 results served from Elasticsearch, with prices and variations (photos blank for the same reason) |
+
+Screenshots are cropped to the page (no browser tabs or bookmarks). Still to add if wanted: Docker Desktop container list, green Actions runs.
 
 Regenerate any of the text files by running the script named in the table (see `docs/RUNBOOK.md`).
